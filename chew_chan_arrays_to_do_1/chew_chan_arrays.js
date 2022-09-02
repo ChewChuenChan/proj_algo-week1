@@ -88,10 +88,11 @@ swapPairs(["Brendan",true,42]);
 
 //removeDupes
 function removeDupes(arr){
-    const unique=[];
+    let unique=[];
+    let nextIndex =0
     for(var i=0; i< arr.length;i ++){
         if(arr[i]!=arr[i+1]){
-        unique.push(arr[i]);}
+        unique[nextIndex++]=arr[i];}
         }
         console.log(unique);
     
