@@ -1,0 +1,26 @@
+Name:  Chew Chuen Chan (Alice)
+ Project Title: Meal Plan Order
+ Project Stack: Python
+ GitHub Repo Link: 
+	https://github.com/ChewChuenChan/proj_algo-week1
+
+ Project Description: 
+ 	My solo project is about a website that can order the meal prep order for family. It has 3 big selections: Classic, Lean & Clean and Vegetarian. 
+	In each selection plan, these are meals accordingly into the plan. 
+	People can browser them before they can sign up to buy them. 
+	Once they selected their meal plan, they need to provide the delivery address and date. 
+	They can view the order they made, edit or delete it. 
+
+New Programming Concept(s) I'm Planning to Learn: 
+	I want to learn many to many relationship cause this project will need to use many to many. 
+
+Week 1 Features (to show at Review during Week 2)
+	I hope to get some advices about my project before I can present it. 
+	If possible, I would love to learn to how to edit & update data using popup and
+	set up the random option and use previous favorite in Python for my project
+
+Week 2 Features (to show at the first office hour/lecture of Week 3)
+	I hope my project is working as this is quite challenging to me. 
+
+Product Backlog (If I have more time after completing my MVP, I'll start to work on...)
+	I want to try to work on the animation , maybe redo this project in Mern. 
