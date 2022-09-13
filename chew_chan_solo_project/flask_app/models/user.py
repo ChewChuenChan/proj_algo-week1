@@ -97,33 +97,3 @@ class User:
     def full_address(self):
         return f"{self.address} {self.city} {self.state} {self.zipcode}"
 
-    # @classmethod
-    # def get_one_order(cls,data):
-    #     query = """
-    #     SELECT * FROM users 
-    #     JOIN meals ON 
-    #     users.id = meals.user_id
-    #     WHERE
-    #     id = %(id)s;"""
-    #     result = connectToMySQL(cls.db).query_db(query,data)
-    #     print(result)
-    #     if len(result) < 1:
-    #         return False
-    #     row = result[0]
-    #     #create the review object
-    #     order = cls(row)
-    #     #create the user object
-    #     meal_data ={
-    #                 'id':row['meals.id'],
-    #                 'name': row['name'],
-    #                 'type': row['type'],
-    #                 'description': row['description'],
-    #                 'delivery_date': row['delivery_date'],
-    #                 'price': row['price'],
-    #                 'created_at': row['meals.created_at'],
-    #                 'updated_at': row['meals.updated_at']
-    #         }
-    #     meal_ob = meal.Meal(meal_data)
-    #     #associate the two objects together
-    #     order.meals = meal_ob
-    #     return order

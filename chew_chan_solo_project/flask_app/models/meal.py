@@ -21,8 +21,7 @@ class Meal:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.users = None
-        # self.users_ids_who_favorited =[]
-        # self.users_who_favorited=[]
+
         
 
     @classmethod
@@ -100,14 +99,6 @@ class Meal:
         return meal_ob
 
     @classmethod
-    def one_order(cls,data):
-        query ="SELECT * FROM meals WHERE delivery_date=%(delivery_date)s"
-        result = connectToMySQL(cls.db).query_db(query,data)
-        this_order = cls(result[0])
-        print(this_order)
-        return this_order
-
-    @classmethod
     def update(cls,data):
         query = """
         UPDATE meals SET 
@@ -147,28 +138,3 @@ class Meal:
             is_valid = False
             flash("price must be more than 0","meal")
         return is_valid
-
-
-    # @staticmethod
-    # def meal_type (meal_data):
-    #     is_valid = True
-    #     if meal_data['type'] == "Classic":
-    #         is_valid = False
-    #         <div class="orange">
-    #     elif meal_data ['type'] == "Lean":
-    #         is_valid = False
-    #         <div class="Blue">
-    #     elif meal_data ['type'] == "Vegetarian":
-    #         is_valid = False
-    #         <div class ="Green">
-    #     return is_valid
-
-    @classmethod
-    def sum(cls,data):
-        query = "SELECT SUM(price)as total, name, price FROM meals WHERE delivery_date =%(delivery_date)s;"
-        result = connectToMySQL(cls.db).query_db(query,data)
-        if len(result) < 1:
-            return False
-        total = cls(result[0])
-        return total
-

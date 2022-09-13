@@ -37,7 +37,7 @@
                     <div class="col-8 border">
                         <P>Dear {{r.user.first_name}}, </P>
                         <p>Your {{r.created_at.strftime('%m/%d/%Y')}} order are:</p>
-                        <p>Name - <a href="/meals/{{r.id}}">{{r. name}}</a></p>
+                        <p>Name -{{r. name}}</a></p>
                         <p>Type - {{r.type}}</p>
                         <p>Description - {{r.description}}</p>
                         </p>Meal delivery on - {{r.delivery_date.strftime('%m/%d/%Y')}}</p>
