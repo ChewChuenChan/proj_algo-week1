@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+    <title>Meal Prep Login</title>
+
+</head>
+<body>
+    <div class="holder">
+        <!-- header & navbar section -->
+        <header id="header" class="header">
+            <nav class="navbar flex">
+                {% block menu %}
+                    {% include 'menu.html' %}
+                {%  endblock menu%}
+            </nav>
+        </header>
+    </div>
+    <!-- Log in Section -->
+    <section id = "services" class ="services py-5">
+        <div class="container">
+            {% if error%}
+                {%for msg in error%}
+                    <p class="text-danger">{{msg}}</p>
+                {% endfor%}
+            {% endif%}
+        </div>
+        <div class="intro-bg flex">
+            <div class="container flex">
+                <h2>Meal Prep has Delicious Food</h2>
+            </div>
+                <div class="login">
+                    <form action="/login" method="POST" class="login flex flex-sb" >
+                        <h2>Log in</h2>
+                        {% if log_msg %}
+                            <div class ="alert" role="alert">
+                                {% for message in log_msg %}
+                                    <p >{{message}}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" placeholder="email">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" placeholder="password">
+                        <input type="submit" value="login">
+                    </form>
+                </div>
+        </div>
+    </section>
+    <!-- Meal Plan section -->
+    <section id="meal-plan" class="py-5">
+        <div class="section-title flex">
+            <h2>Please select a Meal Plan</h2>
+        </div>
+    </section>
+
+    <div class="meal-section">
+        <div class="classic grid">
+            <ul>
+                <li>
+                    <h2>Classic Meal</h2>
+                </li>
+                <br>
+                <li>
+                    <img src="../static/images/beef.jpg" alt="beef" width="200" height=""300>
+                </li>
+                <br>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A architecto officiis sed veritatis! Ex sint laboriosam, iste ullam ipsam ducimus temporibus nulla. Facilis quaerat, qui doloremque architecto itaque quod aperiam.
+                </li>            
+                <li>
+                    <a href="/signup" class="signup-button">Sign up</a>
+                </li>
+            </ul>
+        </div>
+        <div class="lean grid">
+            <ul>
+                <li>
+                    <h2>Lean and Clean Meal</h2>
+                </li>
+                <li>
+                    <img src="../static/images/chicken.jpg" alt="chicken" width="200" height=""300>
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A architecto officiis sed veritatis! Ex sint laboriosam, iste ullam ipsam ducimus temporibus nulla. Facilis quaerat, qui doloremque architecto itaque quod aperiam.
+                </li>            
+                <li >
+                    <br>
+                    <a href="/signup" class="signup-button">Sign up</a>
+                </li>
+            </ul>
+        </div>
+        <div class="vegetarian grid ">
+            <ul>
+                <li>
+                    <h2>Vegetarian Meal</h2>
+                </li>
+                <li>
+                    <img src="../static/images/vegetarianChilli.jpg" alt="chicken" width="200" height=""300>
+                </li>
+                <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. A architecto officiis sed veritatis! Ex sint laboriosam, iste ullam ipsam ducimus temporibus nulla. Facilis quaerat, qui doloremque architecto itaque quod aperiam.
+                </li>            
+                <li>
+                    <a href="/signup" class="signup-button">Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+</body>
+</html>
